@@ -1,0 +1,19 @@
+<body class="m-4">
+    <H1 [ngStyle]="{'color':'red'}">Hello World</H1>
+    <H1>Count - {{count}}</H1>
+    <button [className]="classes" [disabled]="isDisable" (click)="btnClick()">Click</button><br>
+    <input [type]="fieldType" [(ngModel)]="text" />
+    <button class="btn btn-danger ms-2" (click)="btnShow()">Show</button>
+    <H1>{{text | titlecase}}</H1>
+    <H1>{{text | titlecase |slice :5}}</H1>
+    <input type="text" [(ngModel)]="spi" />
+    <H1>Enter Float number : {{spi | number: '3.2-5'}}</H1>
+    <H1>Enter from 0-1 : {{spi | percent}}</H1>
+    <H1>Enter Number : {{spi | currency:'INR'}}</H1>
+    <input type="text" [(ngModel)]="faculty.name" />
+    <H1>{{faculty | json}}</H1>
+    <H1>{{name | lowercase }} - {{city | uppercase}}</H1>
+    <button class="btn btn-dark m-2 " [disabled]="isDisable" (click)="btnIncSize()">+</button>
+    <button class="btn btn-secondary" [disabled]="isDisable" (click)="btnDesSize()">-</button><br>
+    <img [width]="imgwidth" [src]="imgpath" /><br>
+</body>

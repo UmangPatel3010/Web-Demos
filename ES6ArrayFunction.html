@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body>
+        <input type="text" id="add">
+        <input type="button" onclick="push()" value="PUSH">
+        <input type="button" onclick="pop()" value="POP">
+        <input type="button" onclick="shift()" value="SHIFT">
+        <input type="button" onclick="unshift()" value="UNSHIFT">
+        <input type="button" onclick="sort()" value="SORT">
+        <input type="button" onclick="arr_reverse()" value="REVERSE">
+        <br><br>
+        <input type="button" onclick="chkIncludes()" value="INCLUDES">
+        <input type="button" onclick="chkMap()" value="MAP">
+        <input type="button" onclick="chkSome()" value="SOME">
+        <input type="button" onclick="chkEvery()" value="EVERY">
+        <input type="button" onclick="chkReduce()" value="REDUCE">
+        <input type="button" onclick="chkFilter()" value="FILTER">
+        <input type="button" onclick="chkFind()" value="FIND">
+        <input type="button" onclick="arr_splice()" value="SPLICE">
+        <input type="button" onclick="arr_slice()" value="SLICE">
+        
+        <h2><p id="p_tag"></p></h2>
+        <h3>ES6 OUTPUT</h3>
+        <h2><p id="es6_out"></p></h2>
+
+        <script>
+            a = [1,2,3,4,5,6,7,8,9,10];
+            p =document.getElementById("p_tag");
+            es =document.getElementById("es6_out");
+            function display() {
+                p.innerHTML = ""
+                for(ele of a){
+                    p.innerHTML += ele +","
+                }
+            }
+            function push(){
+                a.push(document.getElementById("add").value);
+                display();
+            }
+            function pop(){
+                a.pop();
+                display();
+            }
+            function shift(){
+                a.shift();
+                display();
+            }
+            function unshift(){
+                a.unshift(document.getElementById("add").value);
+                display();
+            }
+            function arr_reverse(){
+                a.reverse();
+                display();
+            }
+            function sort(){
+                a.sort((a,b)=>{return a-b});
+                display();
+            }
+            function chkEvery(){
+                es.innerHTML= a.every((ele)=> ele>5);
+            }
+            function chkFilter(){
+                es.innerHTML = a.filter((ele)=>ele>5);
+            }
+            function chkFind(){
+                es.innerHTML = a.find((ele)=>ele>5);
+            }
+            function chkIncludes(){
+                es.innerHTML = a.includes(parseInt(document.getElementById("add").value));
+            }
+            function chkMap(){
+                es.innerHTML = a.map((ele)=>Math.pow(ele,2));
+            }
+            function chkReduce(){
+                es.innerHTML = a.reduce((acm,cur)=>acm+cur);
+            }
+            function chkSome(){
+                es.innerHTML = a.some((ele)=>ele>5);
+            }
+            function arr_splice(){
+                es.innerHTML = a.toSpliced(2,5);
+            }
+            function arr_slice(){
+                es.innerHTML = a.slice(2,5);
+            }
+            display();
+        </script>
+    </body>
+
+</html>

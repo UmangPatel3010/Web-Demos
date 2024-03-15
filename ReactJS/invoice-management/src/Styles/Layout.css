@@ -1,0 +1,19 @@
+.custom-navbar {
+    background-color: #ffa6ff74;
+
+}
+
+.custom-navbar .navbar-brand {
+    color: black;
+}
+
+.nav-link {
+    padding-top: 11px;
+    color: black !important;
+}
+
+.dropdown::marker {
+    content: "";
+    display: none;
+}
+
